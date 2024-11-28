@@ -1,6 +1,6 @@
 # Data Science Interview Questions Repository
 
-This repository is a comprehensive collection of interview questions tailored for Data Science roles. It covers a wide range of topics, including:
+This repository is a comprehensive collection of interview questions tailored for Data Science roles. It will covers a wide range of topics, including:
 
 - **Technical Concepts:** Statistics, Machine Learning, Deep Learning, and Data Engineering.
 - **Programming:** Python, R, SQL, and tools like Spark or Hadoop.
