@@ -1,0 +1,30 @@
+# Write A Function to calculate Moving Average
+def moving_average(numbers, window_size):
+    """
+    Calculate the moving average of a list of numbers.
+    
+    Parameters:
+        numbers (list): The list of numbers.
+        window_size (int): The size of the moving average window.
+    
+    Returns:
+        list: A list containing the moving averages.
+    """
+    if not numbers or window_size <= 0:
+        return []
+
+    if window_size > len(numbers):
+        raise ValueError("Window size cannot be larger than the length of the list.")
+    
+    moving_averages = []
+    for i in range(len(numbers) - window_size + 1):
+        window = numbers[i:i + window_size]
+        moving_averages.append(sum(window) / window_size)
+    
+    return moving_averages
+
+# Example usage:
+numbers = [10, 20, 30, 40, 50, 60, 70]
+window_size = 3
+print(moving_average(numbers, window_size))
+
