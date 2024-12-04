@@ -33,9 +33,8 @@ $$
 1. **Gaussian Naive Bayes**
    - Used when features are continuous and assumed to follow a normal distribution.
    - Likelihood is calculated using the Gaussian probability density function:
-     $$
-     P(x|y) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
-     $$
+   - 
+     $P(x|y) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$
      - $\mu$: Mean
      - $\sigma^2$: Variance
 
