@@ -77,6 +77,10 @@ $$
 
 - **Feature Independence Assumption**: Real-world data rarely satisfies the independence assumption, which can degrade accuracy.
 - **Zero Frequency Problem**: If a feature value is not present in the training data for a class, the probability is zero. This is addressed using **smoothing** (e.g., Laplace smoothing).
+  ```
+  Laplace smoothing adds a small constant (e.g., 1) to all probabilities to handle cases where a
+  word/class pair has never been seen in training, preventing probabilities of zero.
+  ```
 - **Not Ideal for Continuous Data**: Gaussian Naive Bayes assumes a normal distribution, which may not always hold.
 
 ---
@@ -113,3 +117,15 @@ test_X = vectorizer.transform(test_doc)
 prediction = model.predict(test_X)
 
 print("Prediction:", prediction)  # Output: [1] (Spam)
+```
+
+---
+
+## Interview Qustions
+- **How does Naive Bayes handle missing data?**\
+ Naive Bayes can ignore missing features during classification because it calculates the probabilities for each feature independently.
+
+- **What happens if the independence assumption is violated in Naive Bayes?**\
+ The predictions may become less accurate, but Naive Bayes can still work well in practice, especially for large datasets.
+
+
