@@ -9,19 +9,25 @@ Ensemble learning is a machine learning technique that combines multiple individ
 1. **Bagging (Bootstrap Aggregating):**
    - Multiple models are trained independently on different subsets of the data (created via bootstrapping).
    - Predictions are aggregated (e.g., by averaging for regression or voting for classification).
+   - **When to use:** Effective for high-variance models, as it reduces variance
    - **Example:** Random Forest.
 
 2. **Boosting:**
    - Models are trained sequentially, with each model focusing on correcting the errors of its predecessor.
    - Predictions are combined to create a stronger final model.
+   - **When to use:** Addresses high-bias problems by iteratively refining predictions.
    - **Example:** Gradient Boosting, AdaBoost, XGBoost.
 
 3. **Stacking (Stacked Generalization):**
-   - Combines the predictions of multiple models using a "meta-model."
+   - Stacking uses multiple base models (level-0 models) to make predictions, and these predictions serve as input features for a higher-level model (meta-model) to make the final prediction.The meta-model learns how to weigh and combine the predictions of the base models.
    - The base models generate predictions, which serve as input features for the meta-model.
+   - **When to use:** Useful for leveraging the strengths of diverse models to improve overall performance.
+   - **Example Algorithms:** Can combine diverse models like Random Forest, Gradient Boosting, and Logistic Regression with a meta-model like Linear Regression.
 
 4. **Voting:**
-   - Combines predictions from multiple models via majority voting (for classification) or averaging (for regression).
+   - Combines predictions from multiple models via majority voting (for classification) or averaging (for regression).It does not involve learning; it relies on simple aggregation.
+   - **When to use:** When individual models perform well and have similar accuracy, and diversity among models can provide better consensus.
+   - **Example Algorithms:** Majority vote among Decision Trees, SVMs, and Logistic Regression.
 
 ---
 
