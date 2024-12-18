@@ -1,3 +1,15 @@
+# Table of Contents
+
+1. [Confusion Matrix](#1-confusion-matrix)
+2. [ROC-AUC Curve (Receiver Operating Characteristic - Area Under Curve)](#2-roc-auc-curve-receiver-operating-characteristic---area-under-curve)
+3. [Precision-Recall (PR) Curve](#3-precision-recall-pr-curve)
+4. [Balanced Accuracy](#4-balanced-accuracy)
+5. [Class-Specific Metrics](#5-class-specific-metrics)
+6. [Resampling Techniques for Better Evaluation](#6-resampling-techniques-for-better-evaluation)
+7. [Cost-Sensitive Learning](#7-cost-sensitive-learning)
+8. [Threshold in Classification Models](#threshold-in-classification-models)
+9. [References](#refrence)
+
 # Evaluating Model Performance on an Imbalanced Dataset
 
 Imbalanced datasets occur when one class has significantly more samples than others. Traditional metrics like accuracy can be misleading in such cases. 
