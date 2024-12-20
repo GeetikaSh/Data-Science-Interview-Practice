@@ -3,6 +3,8 @@
 
 Regularization techniques are used to prevent overfitting in machine learning models by adding a penalty to the loss function. The penalties are based on the magnitude of the coefficients, and the most common regularization techniques are **L1 Regularization** and **L2 Regularization**.
 
+_The Difference Between the L1 and L2 Regularization is in the **penalty term**._
+
 ## L1 Regularization (Lasso Regression)
 - **Definition**: L1 regularization adds the absolute value of the coefficients as a penalty term to the loss function.
 - **Formula**: Loss = Loss_function + λ * Σ|w|, where w is the weight/coefficients, and λ is the regularization parameter.
