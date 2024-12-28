@@ -1,7 +1,6 @@
 # Principal Component Analysis (PCA)
 
-Principal Component Analysis (PCA) is a powerful technique for dimensionality reduction, data visualization, and feature extraction in machine learning and data analysis. 
-This README serves as a comprehensive guide to understand and implement PCA in various scenarios.
+Principal Component Analysis (PCA) is a powerful technique for dimensionality reduction, data visualization, and feature extraction in machine learning and data analysis.
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -18,12 +17,11 @@ This README serves as a comprehensive guide to understand and implement PCA in v
 ## Introduction
 
 As the number of features or dimensions in a dataset increases, the amount of data required to obtain a statistically significant result increases exponentially.
-This can lead to issues such as overfitting, increased computation time, and reduced accuracy of machine learning models this is known as the **curse of dimensionality** problems
-that arise while working with high-dimensional data.
-**Freature Engineering** is used to address this curse of dimentionality. Feature Engineering is used to reduce the Dimentionality. The main Idea in to reduce the number of input features,
+This can lead to issues such as overfitting, increased computation time, and reduced accuracy of machine learning models this is known as the **curse of dimensionality** problems.
+
+**Freature Engineering** is used to address this _**curse of dimentionality**_. Feature Engineering is used to reduce the Dimentionality. The main Idea in to reduce the number of input features,
 whlile reataining all the relevant information.
 PCA transforms high-dimensional data into a lower-dimensional form while preserving as much variance as possible.
-It achieves this by identifying the principal components—directions of maximum variance in the data—and projecting the data onto these components.
 
 ## How PCA Works
 
