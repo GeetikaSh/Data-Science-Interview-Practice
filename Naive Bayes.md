@@ -44,7 +44,8 @@ $$
 
 3. **Bernoulli Naive Bayes**
    - Used for binary features (e.g., presence or absence of words in a document).
-   - Works well for text classification tasks with binary term frequency.
+   - Works well for text classification tasks with binary term frequency. Where
+     each word represents one features in the data.
 
 ---
 
@@ -70,6 +71,7 @@ $$
 - **Scalable**: Works well with large datasets.
 - **Works Well with Small Data**: Performs surprisingly well even with small amounts of data.
 - **Handles Categorical Data**: Particularly effective for text classification.
+- **Handles high dimension data**: Workd well with high dimention data.
 
 ---
 
@@ -128,4 +130,7 @@ print("Prediction:", prediction)  # Output: [1] (Spam)
 - **What happens if the independence assumption is violated in Naive Bayes?**\
  The predictions may become less accurate, but Naive Bayes can still work well in practice, especially for large datasets.
 
+---
+## Reference
+- [Naive Bayes Classifier | GeeksforGeeks](https://www.geeksforgeeks.org/naive-bayes-classifiers/)
 
