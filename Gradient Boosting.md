@@ -158,45 +158,47 @@ Here are some commonly asked interview questions related to Gradient Boosting:
     - Random Forest is a bagging technique where multiple decision trees are trained independently on random subsets of the data,
     and their results are averaged for regression or voted for classification.
 
-6. **How would you prevent overfitting in a Gradient Boosting model?**\
-    Overfitting in Gradient Boosting can be prevented by:
-    - Using early stopping to halt training when the model’s performance stops improving on a validation set.
-    - Regularizing the model by limiting tree depth, adjusting the learning rate, or using subsampling.
-    - Reducing the number of estimators and tuning the learning rate to balance between underfitting and overfitting.
-
-7. **Can you explain the role of the learning rate in Gradient Boosting?**
+6. **Can you explain the role of the learning rate in Gradient Boosting?**
     The learning rate (eta) controls how much each weak learner contributes to the final model.
     A smaller learning rate means each model will have a smaller influence, requiring more iterations (estimators) to converge to a good solution.
     Balancing the learning rate and the number of estimators is crucial for optimal performance.
 
-8. **What are the differences between Gradient Boosting, XGBoost, LightGBM, and CatBoost?**
+7. **What are the differences between Gradient Boosting, XGBoost, LightGBM, and CatBoost?**
     - [Choosing Between XGBoost, LightGBM, and CatBoost.md](https://github.com/GeetikaSh/Data-Science-Interview-Practice/blob/8e9e3a68026149d902423daa7eca27529255c07b/Choosing%20Between%20XGBoost%2C%20LightGBM%2C%20and%20CatBoost.md)`
 
-9. **How do you evaluate the performance of a Gradient Boosting model?**\
+8. **How do you evaluate the performance of a Gradient Boosting model?**
     The performance of a Gradient Boosting model can be evaluated using metrics such as:
     - **Accuracy** (for classification tasks)
     - **Mean Squared Error (MSE)** (for regression tasks)
     - **Cross-Validation**: Helps assess the model’s performance on unseen data and avoid overfitting.
 
-10. **What is early stopping, and why is it important in Gradient Boosting?**\
+9. **What is early stopping, and why is it important in Gradient Boosting?**
     - Early stopping is a regularization technique that stops the training process if the model’s performance on the validation set does not improve after a certain number of iterations.
     It helps prevent overfitting by avoiding unnecessary training once the model has sufficiently learned from the data.
 
-11. **How does Gradient Boosting handle imbalanced datasets?**\
+10. **How does Gradient Boosting handle imbalanced datasets?**
     Gradient Boosting can handle imbalanced datasets by using techniques such as:
     - **Class Weights**: Assigning higher weights to the minority class to balance the impact of errors.
     - **Over-sampling or Under-sampling**: Resampling the dataset to balance the number of examples from each class.
     - **Custom Loss Function**: Modifying the loss function to account for class imbalances.
 
-12. **Can you explain the concept of feature importance in Gradient Boosting models?**\
+11. **Can you explain the concept of feature importance in Gradient Boosting models?**
     - Feature importance in Gradient Boosting refers to how useful each feature is in predicting the target variable.
     It is typically computed by looking at how much the performance metric improves when a feature is included in the model.
     Features that lead to the greatest reduction in loss across iterations are considered most important.
 
-13. **Describe a real-world scenario where you would use Gradient Boosting.**
-    - A real-world scenario for using Gradient Boosting is in **fraud detection** in financial transactions.
-    By using a Gradient Boosting model, you can sequentially build weak models to detect patterns in transaction data that are indicative of fraudulent behavior,
-    effectively improving the accuracy of fraud detection and reducing false positives.
+12. **Difference Between Gradient Descent and Gradient Bossting?**
+    - | Aspect                | Gradient Descent                             | Gradient Boosting                            |
+      |-----------------------|---------------------------------------------|---------------------------------------------|
+      | **Purpose**           | Optimize model parameters.                  | Build a strong predictive model using weak learners. |
+      | **Application**       | Parameter optimization in models like neural networks or linear regression. | Ensemble techniques for regression and classification tasks. |
+      | **Scope**             | Works with continuous parameter spaces.     | Combines discrete weak learners (e.g., trees). |
+      | **Learning Units**    | Updates parameters of a single model.        | Adds new models (learners) sequentially.    |
+      | **Gradient Use**      | Computes gradients for parameter updates.    | Computes gradients of the loss with respect to predictions. |
+      | **Common Algorithms** | SGD, Mini-Batch Gradient Descent.            | GBT, XGBoost, LightGBM, CatBoost.           |
+
+---
+
 
 ## References
 - [Gradient Boosting in Scikit-learn](https://scikit-learn.org/stable/modules/ensemble.html#gradient-boosting)
@@ -204,6 +206,7 @@ Here are some commonly asked interview questions related to Gradient Boosting:
 - [XGBoost Documentation](https://xgboost.readthedocs.io/)
 - [LightGBM Documentation](https://lightgbm.readthedocs.io/)
 - [CatBoost Documentation](https://catboost.ai/docs/)
+- [Difference between Gradient Descent and Gradient Boosting](https://www.geeksforgeeks.org/how-to-tune-hyperparameters-in-gradient-boosting-algorithm/?ref=asr5)
 
 ---
 
