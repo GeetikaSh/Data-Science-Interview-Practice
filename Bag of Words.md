@@ -48,3 +48,27 @@ For example, "happy" and "joyful" are treated as different features, and the wor
 ## 10. What is the role of stopwords removal in BoW Model?
 Stopword removal eliminates common words like "the," "is," and "and" that carry little meaning and reduce noise in the data, 
 leading to a more compact vocabulary.
+
+## 11. How does the BoW model perform when applied to a large corpus of documents?
+Performance declines with large corpora due to the high-dimensional and 
+sparse nature of the BoW matrix. It becomes computationally expensive and memory-intensive.
+
+## 12. How would you deal with sparsity in a BoW matrix?
+- Use dimensionality reduction techniques like Principal Component Analysis (PCA) or Latent Semantic Analysis (LSA).
+- Limit vocabulary size by retaining only the most informative words.
+
+## 13. What impact does tokenization have on the BoW representation?
+Tokenization determines how text is split into features. 
+Inconsistent tokenization can lead to inaccurate representations, 
+such as treating “cat” and “cats” as different features without stemming or lemmatization.
+
+## 14. Can you describe some preprocessing techniques that improve the performance of the BoW model?
+- Lowercasing.
+- Removing punctuation and special characters.
+- Stemming or lemmatization.
+- Removing stopwords.
+- Normalizing word frequencies (e.g., using TF-IDF instead of raw counts).
+
+## 15. What are some alternatives to the BoW model in NLP, and when would you prefer them?
+- **Alternatives:** Word embeddings (e.g., Word2Vec, GloVe), contextual embeddings (e.g., BERT), and n-grams.
+- **Preference:** Use BoW for simpler models or small datasets. Use embeddings for tasks requiring semantic understanding or when working with large datasets.
