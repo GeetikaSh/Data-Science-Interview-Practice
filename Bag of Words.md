@@ -72,3 +72,23 @@ such as treating “cat” and “cats” as different features without stemming
 ## 15. What are some alternatives to the BoW model in NLP, and when would you prefer them?
 - **Alternatives:** Word embeddings (e.g., Word2Vec, GloVe), contextual embeddings (e.g., BERT), and n-grams.
 - **Preference:** Use BoW for simpler models or small datasets. Use embeddings for tasks requiring semantic understanding or when working with large datasets.
+
+## 16. How would you preprocess the text before using the BoW model?
+- Convert text to lowercase.
+- Remove punctuation, special characters, and stopwords.
+- Apply stemming or lemmatization to reduce words to their base forms.
+
+## 17. If a dataset has a highly imbalanced distribution of words, how would this affect the BoW representation, and how would you address it?
+Highly frequent words dominate, reducing the impact of rare but significant words. Address this by using techniques like TF-IDF weighting or removing very frequent and rare words.
+
+## 18. How would you evaluate the performance of a machine learning model that uses BoW for text classification?
+Use metrics like accuracy, precision, recall, F1-score, and AUC-ROC. Cross-validation can help ensure generalizability.
+
+## 19. Suppose you are tasked with text clustering using BoW. What challenges might arise, and how would you address them?
+- **Challenges:** Sparsity, high dimensionality, and loss of semantic meaning.
+- **Solutions**: Apply dimensionality reduction techniques like LSA or use embeddings for semantic understanding.
+
+## 20. If the vocabulary size in a BoW model is too large, how would you decide which words to keep?
+- Retain words based on frequency thresholds.
+- Use feature selection techniques like chi-square tests.
+- Eliminate words with low variance across documents.
