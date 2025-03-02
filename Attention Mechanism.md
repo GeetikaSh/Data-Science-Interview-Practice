@@ -27,7 +27,30 @@ Traditional seuence-to-sequence models ofthen compressed all information to a fi
 Attention allows the model to dynamically retrive relevant information from the input at each decoding step, improving context retentiona and output quality.
 
 ## Can you explain how the Attention Mechanism works in the context of sequence-to-sequence models?
+In sequence-to-sequence models, attention works as follows:
+**1. Encoder:** Processes the input sequence and generates hidden states for each time step.
+**2. Attention Score:** Computes a score (similarity measure) between the decoder's current state and each encoder hidden state. Common methods include dot product, additive attention, or scaled dot product.
+**3. Softmax:** Converts the scores into attention weights (probabilities).
+**4. Context Vector:** Computes the weighted sum of the encoder hidden states, using the attention weights.
+**5. Decoder:** Uses the context vecotor along with its own hidden state to generate the output.
+This process is repeated at each decoding step, enabling the model to focus on different parts of the input sequence dynamically.
 
+## What are the types of attention mechanism?
+**1. Global Attention:** Considers all encoder hidden state while generating the context vector.
+**2. Local Attention:** Focuses on a subset of encoder hiddden states near a specific point, reducing computional overhead.
+**3. Self-Attention:** Computes attention within a single sequence( e.g. input sequence), where every token attends to every other token. This is widely used in Transformers.
+**4. Multi-Head Attention:** Extends self-attention by using multiple attention heads to capture different relationships in data.
 
+## How is the Attention Mechanism implemented in the Transformer model?
+In Transformer the Attention Mechanism is implemnted through **Scaled Dot-Product Attention Mechanism**:
+1. The input sequence is transformed into **queries (Q), keys (K), and values (V)** using learned weight matrices.
+2. Attention Scores are computed as 
+```math
+\text{Scores} = \frac{Q K^T}{\sqrt{d_k}}
+```
+where \text{d_k}\ is the dimetionality of the key vectors.
+3. The attention scores are passed through the softmax function to attain attention weights.
+4. The weighted sum of the values(V) is computed to produce the output.
+5. Multi-Head Attention combines outputs from multiple attention heads, enabling the model to focus on different aspects of the input simultaneously.
 
 
