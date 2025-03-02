@@ -48,7 +48,7 @@ In Transformer the Attention Mechanism is implemnted through **Scaled Dot-Produc
 ```math
 \text{Scores} = \frac{Q K^T}{\sqrt{d_k}}
 ```
-where \text{d_k}\ is the dimetionality of the key vectors.
+where \text{d_k} is the dimetionality of the key vectors.
 3. The attention scores are passed through the softmax function to attain attention weights.
 4. The weighted sum of the values(V) is computed to produce the output.
 5. Multi-Head Attention combines outputs from multiple attention heads, enabling the model to focus on different aspects of the input simultaneously.
