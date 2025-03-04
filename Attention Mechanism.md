@@ -53,4 +53,9 @@ where $d_k$ is the dimetionality of the key vectors.\
 4. The weighted sum of the values(V) is computed to produce the output.\
 5. Multi-Head Attention combines outputs from multiple attention heads, enabling the model to focus on different aspects of the input simultaneously.
 
+## What is the difference between Self-Attention and Cross-Attention?
+* **Self Attention:** Computes attention within a single sequence. Each elements attends to all other elements in the same sequence.
+  Used in both Encoder and Decoder in a Transformer.
+* **Cross Attention:** Computes attention between the two different sequences, such as decoder attending to the encoder's output in sequence-to-sequence model.
+  
 
