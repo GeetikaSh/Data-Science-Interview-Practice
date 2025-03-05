@@ -57,5 +57,13 @@ where $d_k$ is the dimetionality of the key vectors.\
 * **Self Attention:** Computes attention within a single sequence. Each elements attends to all other elements in the same sequence.
   Used in both Encoder and Decoder in a Transformer.
 * **Cross Attention:** Computes attention between the two different sequences, such as decoder attending to the encoder's output in sequence-to-sequence model.
+
+## What are the advantages of the Attention Mechanism?
+* Handles long term dependencies effictively.
+* Improves interpretability by providing attention weights, which highlights important input parts.
+* Handles variable-length input sequences flexibely.
+* Enhaces parallization, especially in self-attention mechanism like Transformers.
+
+## What are some challenges or limitations of the Attention Mechanism?
   
 
