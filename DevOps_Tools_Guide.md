@@ -146,11 +146,3 @@ Combining these tools can supercharge your development pipeline. For example:
 
 ---
 
-💬 **What’s your favorite DevOps tool?** Share your experience and let's discuss in the comments!  
-
----
-
-***Handling multiple papers?***  
-
-Speed up your research with Sider! Our AI-powered sidebar features 10+ one-click tools including a more advanced Search Agent, ChatPDF, context-aware utilities, and more to help you work smarter and faster.  
-[Level up your research game here](https://bit.ly/4aSnMXa)  
