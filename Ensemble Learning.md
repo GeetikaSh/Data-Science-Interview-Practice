@@ -1,6 +1,6 @@
 # **Ensemble Learning**
 
-Ensemble learning is a machine learning technique that combines multiple individual models (often referred to as "weak learners") to create a single, stronger predictive model. The core idea is that a group of diverse models working together can achieve better performance than a single model alone.
+Ensemble learning is a machine learning technique that combines multiple individual models (often referred to as "weak learners") to create a single, stronger predictive model. The core idea is that a group of diverse models working together can achieve better performance than a single model alone. Let's take an exampbel of buying a car, before buying a car you consult mutltiple people or read articles to find the perfect car for yourself based on you requirement similarly when designing a model, a model combines predictions from multible base models to enhance overall performance.
 
 ---
 
