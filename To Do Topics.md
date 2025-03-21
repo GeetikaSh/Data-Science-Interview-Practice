@@ -6,4 +6,5 @@
 - BART model for Text Auto Completion
 - chi-square tests
 - Regularisation
+- Adaptive Boosting (Adaboost)
 - 
