@@ -7,4 +7,4 @@
 - chi-square tests
 - Regularisation
 - Adaptive Boosting (Adaboost)
-- 
+- Loss Function
