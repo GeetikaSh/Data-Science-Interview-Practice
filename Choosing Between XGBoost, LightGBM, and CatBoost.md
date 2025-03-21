@@ -79,3 +79,17 @@ When deciding which boosting algorithm to useâ€”XGBoost, LightGBM, or CatBoostâ€
 3. **Consider Ensembles:** Combining the strengths of these algorithms in ensembles can sometimes outperform a single model.
 
 ---
+
+## Interview Questions?
+
+### When would you choose XGBoost over LightGBM and CatBoost in a machine learning project?
+XGBoost is a strong choice when we need a balance between accuracy, interpretability, and computational efficiency. It works well for structured tabular data and can handle missing values effectively. While it is slower than LightGBM on large datasets, it provides robust regularization and better default hyperparameters. LightGBM is ideal for large datasets due to its histogram-based algorithm, which speeds up training. CatBoost is preferable when working with many categorical features since it can natively handle them without requiring extensive preprocessing.
+
+### What are the key differences in how LightGBM and XGBoost handle tree growth, and how does this impact their performance?
+The key difference between XGBoost and LightGBM is in their tree growth strategy. XGBoost grows trees level-wise, meaning it expands all nodes at the same depth before moving deeper. This ensures more balanced trees but can be slower. In contrast, LightGBM uses a leaf-wise growth strategy, where it expands the leaf node with the highest loss reduction. This makes it faster and more memory-efficient but can sometimes lead to overfitting, requiring careful tuning of parameters like `max_depth`.
+
+### When working with highly imbalanced data, which among XGBoost, LightGBM, and CatBoost would you choose, and why?
+XGBoost is a strong choice for highly imbalanced datasets because it allows tuning of scale_pos_weight, which adjusts the balance between positive and negative classes. It also supports custom loss functions like log-loss or focal loss to improve classification performance. LightGBM is also effective, offering is_unbalance and scale_pos_weight to handle class imbalance efficiently. CatBoost, on the other hand, automatically adjusts class weights and tends to perform well with categorical-heavy imbalanced datasets without much manual tuning.
+
+### If your dataset has many categorical features, would you prefer XGBoost, LightGBM, or CatBoost? Why?
+CatBoost is the best choice for datasets with many categorical features because it natively handles categorical variables without requiring preprocessing like one-hot encoding or label encoding. It uses an efficient encoding technique called ordered boosting, which prevents data leakage and improves generalization. In contrast, XGBoost and LightGBM require manual encoding of categorical features, which can increase memory usage and slow down training. This makes CatBoost ideal for datasets with a high proportion of categorical variables.
