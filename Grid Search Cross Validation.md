@@ -17,9 +17,7 @@ In this page, we focus on **Grid Search Cross Validation**.
 
 ## What is Grid Search Cross Validation?
 
-Grid Search Cross Validation performs an **exhaustive search** over a predefined grid of hyperparameters.
-It evaluates each combination of parameters using cross-validation, ensuring robust model performance.
-
+**Grid Search Cross-Validation** is a hyperparameter tuning technique that **systematically searches** through a predefined set of hyperparameter values. It evaluates every possible combination using cross-validation to identify the best-performing set of parameters. This approach ensures that the model generalizes well to unseen data by selecting the optimal configuration based on validation performance.
 
 ## Steps Involved:
 
@@ -70,11 +68,24 @@ It evaluates each combination of parameters using cross-validation, ensuring rob
 
 ## Advantages:
 - **Exhaustive Search:** Tests all possible combinations of parameters, ensuring the best performance.
-- **Cross-Validation:** Uses cross-validation to avoid overfitting and evaluate model performance more reliably.
+- **Reliable Performance Estimation:** Uses **cross-validation**, reducing the risk of overfitting by validating model performance on multiple subsets of data.
+- **Reproducibility:** Since it follows a structured search, it produces consistent and repeatable results.
 
 ## Disadvantages:
 - **Computationally Expensive:** For large grids, it can be very time-consuming as it needs to evaluate many combinations.
 - **Limited Scope:** The grid search is restricted to the hyperparameter values provided; it may miss optimal values outside of this range.
+- **Scalability Issues:** As the number of hyperparameters increases, the search space grows exponentially, making it impractical for deep learning models.
+
+## When to Prefer Randomized Search Over Grid Search
+Randomized Search is preferred over Grid Search in the following scenarios:\
+✅ **Large Hyperparameter Space** – When there are many hyperparameters with a wide range of possible values, Grid Search becomes computationally expensive, whereas Randomized Search explores the space more efficiently.\
+✅ **Limited Computational Resources** – If time or processing power is constrained, Randomized Search can find good hyperparameters faster without evaluating every combination.\
+✅ **Diminishing Returns on Grid Search** – In cases where a fine-tuned search is unnecessary, Randomized Search often finds near-optimal parameters without the need for exhaustive evaluation.\
+✅ **Uncertain Hyperparameter Ranges** – If you're unsure of the best hyperparameter values, Randomized Search allows exploration over a broader range, potentially discovering better values outside a predefined grid.
+
+
+## In which scenarios would you prefer Randomized Search over Grid Search?
+
 
 ## Conclusion
 Grid Search Cross Validation is a powerful tool for optimizing model performance by systematically tuning hyperparameters.
