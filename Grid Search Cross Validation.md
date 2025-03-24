@@ -83,10 +83,6 @@ Randomized Search is preferred over Grid Search in the following scenarios:\
 ✅ **Diminishing Returns on Grid Search** – In cases where a fine-tuned search is unnecessary, Randomized Search often finds near-optimal parameters without the need for exhaustive evaluation.\
 ✅ **Uncertain Hyperparameter Ranges** – If you're unsure of the best hyperparameter values, Randomized Search allows exploration over a broader range, potentially discovering better values outside a predefined grid.
 
-
-## In which scenarios would you prefer Randomized Search over Grid Search?
-
-
 ## Conclusion
 Grid Search Cross Validation is a powerful tool for optimizing model performance by systematically tuning hyperparameters.
 However, it can be computationally expensive, and it’s essential to manage the size of the search space to make it more feasible.
