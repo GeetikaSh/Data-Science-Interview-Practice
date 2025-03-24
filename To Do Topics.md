@@ -9,5 +9,5 @@
 - Adaptive Boosting (Adaboost)
 - Loss Function
 - Fuzzy Matching: Use Levenshtein Distance or Jaccard Similarity for near-duplicates (e.g., typos).
-- Grid Search and Random Search
+- Random Search
 - Grdient Descent
