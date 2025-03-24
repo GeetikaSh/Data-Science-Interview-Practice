@@ -50,8 +50,6 @@ Ensuring data quality is crucial for reliable insights and outcomes. Here are th
 
 This structured approach has helped me deliver high-quality data models and analyses throughout my career.
 
----
-
 ## Handling Conflicting Definitions of the Same Data Field
 
 When two departments have conflicting definitions for the same data field, the situation requires a structured and collaborative approach to resolve. Here's how I would handle it:
@@ -80,5 +78,58 @@ When two departments have conflicting definitions for the same data field, the s
    Set up a data governance framework to prevent future conflicts. Include procedures for validating and approving changes to critical data fields.
 
 By following these steps, I ensure consistency, minimize misunderstandings, and foster collaboration between departments.
+
+
+## Common Cause of Poor Data Quality and How can you mitigate it?
+1. **Human Errors** (e.g., data entry mistakes, typos)
+- **Solution:** Implement data validation rules, auto-correction, and training programs for data entry personnel.
+
+2. **Inconsistent Data Across Systems**
+- **Solution:** Use data governance frameworks and centralized data management to ensure uniformity.
+
+3. **Missing or Incomplete Data**
+- S**olution:** Implement mandatory fields, default values, and imputation techniques to handle missing data.
+
+4. **Duplicate Records**
+- **Solution:** Use deduplication algorithms and enforce unique identifiers for records.
+
+5. **Outdated Data**
+- **Solution:** Set up automated data updates and review cycles to keep data fresh.
+
+6. **Integration Issues from Multiple Sources**
+- **Solution:** Standardize data formats, use ETL (Extract, Transform, Load) pipelines, and perform data validation during ingestion.
+
+## How would you handle missing data in a dataset? What techniques would you use?
+Handling missing data depends on the type and extent of missingness:
+
+1. **Deletion Methods:**
+- **Listwise Deletion:** Remove rows with missing values (useful if missing data is minimal).
+- **Pairwise Deletion:** Use available data without dropping entire rows (for correlation analysis).
+
+2. **Imputation Techniques:**
+- **Mean/Median/Mode Imputation:** Replace missing values with statistical measures (best for numerical data with low missingness).
+- **Forward/Backward Fill:** Use previous or next values (works well for time series data).
+- **K-Nearest Neighbors (KNN) Imputation:** Predict missing values based on similar data points.
+- **Regression Imputation:** Predict missing values using regression models.
+- **Multiple Imputation:** Create multiple datasets with different imputed values for better robustness.
+
+3. **Advanced Techniques:**
+- **Deep Learning Models:** Autoencoders or GANs for imputing complex patterns.
+- **Using Domain Knowledge:** Consulting experts to fill in gaps logically.
+
+The best approach depends on the dataset size, missing data pattern, and business requirements.
+
+### How do you detect and handle duplicate records in a dataset?
+1. **Detecting Duplicates:**
+- **Using Unique Identifiers:** Check for repeated IDs or primary keys.
+- **Row-wise Comparison:** Identify duplicate rows using functions like df.duplicated() in Pandas.
+- **Fuzzy Matching:** Use Levenshtein Distance or Jaccard Similarity for near-duplicates (e.g., typos).
+- **Aggregation Checks:** Summarize key attributes (e.g., count unique names per email).
+
+2. **Handling Duplicates:**
+- **Drop Exact Duplicates:** df.drop_duplicates() removes identical records.
+- **Merge Similar Records:** Keep the most recent or most complete entry.
+- **Apply Business Rules:** Define criteria (e.g., same name & email = duplicate).
+- **Standardize Data Before Deduplication:** Convert text to lowercase, remove spaces, and unify formats.
 
 ---
