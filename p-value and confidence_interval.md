@@ -14,6 +14,11 @@ Imagine you’re flipping a coin:
 - The p-value helps quantify how unusual or “surprising” this result is compared to what’s expected with a fair coin (50-50 chance).  
 If the p-value is very small, you conclude the coin is likely unfair. If it’s large, it’s probably just luck.
 
+### **Interpreting Hypothesis Testing**
+A **p-value (probability value)** helps determine whether the results of an experiment are statistically significant. It represents the probability of obtaining a test statistic as extreme as the observed one, assuming the null hypothesis is true.
+- If **p < 0.05** (commonly used threshold), we reject the null hypothesis, meaning there is strong evidence that the observed effect is not due to chance.
+- If **p > 0.05**, we fail to reject the null hypothesis, meaning the observed effect could have happened by random chance.
+
 ---
 
 ## **2. What is a Confidence Interval?**
