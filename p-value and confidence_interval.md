@@ -12,7 +12,7 @@ Think of it as the **"surprise factor"**:
 Imagine you’re flipping a coin:  
 - If you flip it 10 times and get 8 heads, you might think, “That’s odd; maybe the coin is biased.”  
 - The p-value helps quantify how unusual or “surprising” this result is compared to what’s expected with a fair coin (50-50 chance).  
-If the p-value is very small, you conclude the coin is likely unfair. If it’s large, it’s probably just luck.
+  If the p-value is very small, you conclude the coin is likely unfair. If it’s large, it’s probably just luck.
 
 ### **Interpreting Hypothesis Testing**
 A **p-value (probability value)** helps determine whether the results of an experiment are statistically significant. It represents the probability of obtaining a test statistic as extreme as the observed one, assuming the null hypothesis is true.
@@ -32,7 +32,13 @@ Think of it as a **margin of error**:
 ### **Analogy:**
 Imagine you’re estimating the weight of a suitcase:  
 - You say, “It’s about 20 kg, give or take 2 kg.” This range (18-22 kg) is your confidence interval.  
-You’re not 100% sure it’s exactly 20 kg, but you’re confident the true weight falls within that range.
+  You’re not 100% sure it’s exactly 20 kg, but you’re confident the true weight falls within that range.
+
+---
+
+## **Difference Between P-Value and Confidence Interval**
+- A **p-value** tells us the probability of obtaining results as extreme as the observed ones, assuming the null hypothesis is true. It helps us determine whether an effect is statistically significant.
+- A **confidence interval (CI)** provides a range of values within which the true population parameter is likely to fall, with a certain level of confidence (e.g., 95%). It gives an estimate of uncertainty around the sample statistic.
 
 ---
 
@@ -40,6 +46,10 @@ You’re not 100% sure it’s exactly 20 kg, but you’re confident the true wei
 - **P-Value**: Tells us if a result is surprising or significant (unlikely due to chance).  
   - *Smaller is better*: p < 0.05 often means the result is significant.  
 - **Confidence Interval**: Provides a range of likely values for the result, showing how precise our estimate is.  
-  - *Narrower is better*: A tighter range means we’re more confident about the estimate.  
+  - *Narrower is better*: A tighter range means we’re more confident about the estimate.
 
-By combining both, we can communicate not only whether a result matters (p-value) but also how reliable our estimate is (confidence interval).  
+## **Key Difference:**
+- The p-value is used for hypothesis testing to decide whether to reject the null hypothesis.
+- The confidence interval provides an estimated range and gives more information about the magnitude and direction of an effect.
+
+By combining both, we can communicate not only whether a result matters (p-value) but also how reliable our estimate is (confidence interval).
