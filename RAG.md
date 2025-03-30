@@ -46,4 +46,20 @@ A vector database is designed to store and retrieve high-dimensional embeddings 
 - **Semantic Understanding:** Finds relevant results even if keywords don’t exactly match.
 - **Cost-Effective:** Reduces the need for full fine-tuning of LLMs.
 - **Customizability:** Can store company-specific or domain-specific knowledge.
+
+
+## How does Retrieval-Augmented Generation (RAG) improve the performance of Large Language Models (LLMs)?
+Retrieval-Augmented Generation (RAG) enhances LLMs by combining retrieval-based and generative approaches. Instead of relying solely on pre-trained knowledge, RAG retrieves relevant documents from an external knowledge base (like a vector database) and incorporates them into the model’s response generation process.
+
+### Key Benfits:
+- **Access to Up-to-Date Information**: Unlike static LLMs, RAG can retrieve real-time or proprietary data.
+- **Reduced Hallucination**: It grounds responses in factual, retrieved sources, reducing misinformation.
+- **Efficient Knowledge Utilization**:  By retrieving only relevant data, it minimizes computational costs compared to training larger models.
+- **Improved Context Awareness**: Helps handle domain-specific queries by leveraging a curated knowledge base.
+- **Better Scalability**: New information can be added without retraining the entire model.
+
+### Example Use Case:
+- In an Airbus AI application, a RAG-based chatbot could retrieve the latest aerospace design guidelines from a database before responding to engineering queries.
+- Cromwell AI Chatbox
+
    
