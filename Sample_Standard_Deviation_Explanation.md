@@ -1,9 +1,9 @@
 # Why Divide by \( n - 1 \) in Sample Standard Deviation?
 
-Since most of the time we do not have the **population mean** $( \mu \)$, we estimate this value using the **sample mean** $\( \bar{x} \)$.  
-However, when estimating the **population standard deviation** from the **sample standard deviation**,
-$\( x_i \)$ is closer to $\( \bar{x} \)$ than to $\( \mu \)$.  
-This results in an **underestimation** of the population variance. To compensate for this, the **Sample Standard Deviation** is divided by $\( n - 1 \)$ instead of $\( n \)$.
+**Sample standard deviation** is a measure of how much the values in a sample dataset deviate from the sample mean. It is used instead of **population standard deviation** because collecting data from an entire population is often impractical or impossible due to its large size.
+
+To make the estimate unbiased, we use **Bessel’s correction**, which means we divide by $\( n - 1 \)$ instead of $𝑛$. This adjustment compensates for the fact that a sample tends to underestimate variability in the population. It happens so because when estimating the **population standard deviation** from the **sample standard deviation**,
+$\( x_i \)$ is closer to $\( \bar{x} \)$ than to $\( \mu \)$. This results in an **underestimation** of the population variance. To compensate for this, the **Sample Standard Deviation** is divided by $\( n - 1 \)$ instead of $\( n \)$.
 
 > Using \( n - 1 \) instead of \( n \) gives a more accurate estimate of the population variance and standard deviation, especially for small sample sizes. For large samples, the difference becomes negligible.
 
