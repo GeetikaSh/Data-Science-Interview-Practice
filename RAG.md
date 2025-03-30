@@ -73,6 +73,22 @@ A RAG system consists of two main components:
 - **Retrieval Mechanism:** Uses similarity search (e.g., cosine similarity) to fetch the most relevant documents.
 - **Contextual Response Generation:** The retrieved documents are appended to the LLM’s prompt, improving response accuracy.
 
-### 
+## What challenges might arise when deploying a RAG system at scale?
+Deploying a RAG system at scale comes with multiple challenges, including:
+1. **Latency Issues ⏳**
+   - Retrieving relevant documents from a large vector database can introduce delays.
+   - **Solution:** Optimizing search algorithms and using caching mechanisms can help.
+2. **Hallucination Risk 🔍**
+   - The model might still generate incorrect or misleading information if the retrieved documents are insufficient or irrelevant.
+   - **Solution:** Improve retrieval quality and fine-tune filtering techniques.
+3. **Memory and Storage Constraints 💾**
+   - Storing large embeddings requires significant resources, especially for high-dimensional vectors.
+   - **Solution:** Use quantization techniques and efficient vector search libraries like FAISS or HNSW.
+4. **Data Drift & Knowledge Updates 🔄**
+   - The knowledge base might become outdated over time, leading to incorrect answers.
+   - **Solution:** Implement automated data updates and retrain embeddings periodically.
+5. **Security & Compliance 🔐**
+   - If sensitive data is retrieved and exposed, it can create privacy concerns.
+   - **Solution:** Implement access controls and data anonymization techniques.
 
-   
+## 
