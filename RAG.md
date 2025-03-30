@@ -62,4 +62,17 @@ Retrieval-Augmented Generation (RAG) enhances LLMs by combining retrieval-based 
 - In an Airbus AI application, a RAG-based chatbot could retrieve the latest aerospace design guidelines from a database before responding to engineering queries.
 - Cromwell AI Chatbox
 
+## What are the key components of a Retrieval-Augmented Generation (RAG) system?
+A RAG system consists of two main components:
+1. **Retriever:** Finds relevant documents from an external knowledge base (e.g., a vector database like FAISS, Pinecone, or Weaviate).
+2. **Generator:** Uses a pre-trained LLM (e.g., GPT, BERT, or LLaMA) to generate responses based on the retrieved documents.
+
+### Detailed Breakdown:
+- **Indexing:** Converts documents into embeddings and stores them in a vector database for efficient retrieval.
+- **Query Embedding:** Converts user queries into vector representations.
+- **Retrieval Mechanism:** Uses similarity search (e.g., cosine similarity) to fetch the most relevant documents.
+- **Contextual Response Generation:** The retrieved documents are appended to the LLM’s prompt, improving response accuracy.
+
+### 
+
    
