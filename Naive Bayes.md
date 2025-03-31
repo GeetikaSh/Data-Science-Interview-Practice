@@ -47,6 +47,8 @@ $$
    - Works well for text classification tasks with binary term frequency. Where
      each word represents one features in the data.
 
+Each variant applies the Bayes theorem but differs in how it models feature probabilities.
+
 ---
 
 ## Steps in Naive Bayes Classification
@@ -125,10 +127,20 @@ print("Prediction:", prediction)  # Output: [1] (Spam)
 
 ## Interview Qustions
 - **How does Naive Bayes handle missing data?**\
- Naive Bayes can ignore missing features during classification because it calculates the probabilities for each feature independently.
+Naïve Bayes can handle missing values by ignoring missing features during classification. Since it calculates probabilities for each feature independently, the absence of a feature does not affect the probabilities of other features. This makes Naïve Bayes robust to missing data, as it only considers the available features when making predictions.
 
 - **What happens if the independence assumption is violated in Naive Bayes?**\
  The predictions may become less accurate, but Naive Bayes can still work well in practice, especially for large datasets.
+
+- **How does Laplace Smoothing help in Naïve Bayes, and what problem does it solve?**
+Laplace Smoothing helps in Naïve Bayes by addressing the zero probability problem. When a feature value never appears in the training data for a given class, Naïve Bayes assigns it a probability of zero, which can cause issues in classification.
+
+To avoid this, Laplace Smoothing adds a small constant (usually 1) to all feature counts, ensuring that no probability is ever exactly zero. This helps the model generalize better, especially for unseen feature values in new data.  
+
+$P(x_i | y) = \frac{(count(x_i, y) + 1)}{(count(y) + k)}$
+
+where:  
+- \( k \) is the number of possible feature values (for categorical features).
 
 ---
 ## Reference
