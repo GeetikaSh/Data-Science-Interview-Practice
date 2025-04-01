@@ -30,14 +30,29 @@ Principal Component Analysis (PCA) is a dimensionality reduction technique that 
 
 ## Disadvantages of PCA
 - **Loss of Interpretability:** The transformed features(principal components) are linear combinations of original eatures, making them difficult to interpret.
-- 
+- **Assumption of Linearity:** PCA assumes that the data follows a linear structure, so it might nort work well for the dataset with non-linear relationships.
+- **Sensitivity to Scaling:** If data is not standardized, PCA might give misleading results since it priortizes large-varinance features.
+- **May Discard Useful Information:** If important infomation is in low-variance components, PCA may remove it.
 
-## Applications of PCA
+## How do you decide the number of principal components to retain in PCA?
+The numbe of Principle components(`n_componenets`) to retain is typically chosen based on the **explained variance ratio** or **scree plot**  analysus. Here are the common methods:
+1. **Explained Variance Ratio:**
+- Each principal component contributes to the toatal variance.
+- We select the number of components that retains at least 95% of the variance(or another chosen threshold).
+- This is computes as:
+ $\sum_{i=1}^{k} \frac{\lambda}{\sum \lambda_i}$ 
 
-- **Dimensionality Reduction**: Reducing the number of features in large datasets while retaining most of the information.
-- **Data Visualization**: Visualizing high-dimensional data in 2D or 3D.
-- **Noise Reduction**: Removing noise from datasets by retaining components with significant variance.
-- **Feature Extraction**: Identifying the most impactful features in a dataset.
+where ${\lambda_i}$ are the eigen values of the selected components.
+
+2. **Scree Plot:**
+- A plot of eigen values(variance explained) vs. number of components.
+- We look for an "elbow point" where adding more components gives diminishing returns.
+
+3. **Kaiser Criterion:**
+- Keep components with eigen values greater than .
+
+4. **Cross-Validation:**
+- Test model performance using different numbers of components and select the optimal value based on classification/regression performance.
 
 ## Implementation Steps
 
@@ -84,13 +99,28 @@ plt.show()
 - **Explained Variance Ratio**: Retain components that explain most of the variance.
 - **Domain Knowledge**: Understand the significance of principal components for your specific problem.
 
-## Limitations
+## Assumptions of PCA
+PCA makes the following Assumpition
 
-- **Interpretability**: The new components are linear combinations of original features, making them harder to interpret.
-- **Loss of Information**: Some variance (information) is inevitably lost during dimensionality reduction.
-- **Linearity**: PCA assumes linear relationships, which might not capture complex, nonlinear patterns in the data.
+1. **Linearity**
+- PCA assumes that the relationships between features are linear, meaning that the data can be well-represented by a linear transformation.
+
+2. **Large Variance Contains More Infromation**
+- PCA assumes that features with higher variance are more important in explaining the structure of the data.
+- However, this may not always be ture( e.g. in noisy datasets).
+
+3. **Orthogonality of Principal Components**
+- PCA assumes that the principal components are **uncorrelated (orthogonal)** to each other.
+
+4. **Mean-Centered Data**
+- Thes data should be **centered (mean = 0)** before applying PCA to ensure accurate results.
+
+5. **Equal Importance of Features**
+- PCA assumes that features are measured on the **same scale**.
+- If features have different scales, **standardization (Z-score normalization)** is required before applying PCA.
+
+---
 
 ## Resources
-
 - Scikit-learn PCA Documentation
 - Wikipedia - Principal Component Analysis
