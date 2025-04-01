@@ -2,26 +2,13 @@
 
 Principal Component Analysis (PCA) is a powerful technique for dimensionality reduction, data visualization, and feature extraction in machine learning and data analysis.
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [How PCA Works](#how-pca-works)
-3. [Applications of PCA](#applications-of-pca)
-4. [Implementation Steps](#implementation-steps)
-5. [Code Example](#code-example)
-6. [Best Practices](#best-practices)
-7. [Limitations](#limitations)
-8. [Resources](#resources)
-
----
-
-## Introduction
-
 As the number of features or dimensions in a dataset increases, the amount of data required to obtain a statistically significant result increases exponentially.
 This can lead to issues such as overfitting, increased computation time, and reduced accuracy of machine learning models this is known as the **curse of dimensionality** problems.
 
-**Freature Engineering** is used to address this _**curse of dimentionality**_. Feature Engineering is used to reduce the Dimentionality. The main Idea in to reduce the number of input features,
-whlile reataining all the relevant information.
+**Freature Engineering** is used to address this _**curse of dimentionality**_. Feature Engineering is used to reduce the Dimentionality. The main Idea in to reduce the number of input features, whlile reataining all the relevant information.
+
 PCA transforms high-dimensional data into a lower-dimensional form while preserving as much variance as possible.
+Principal Component Analysis (PCA) is a dimensionality reduction technique that helps mitigate the curse of dimensionality. It transforms the original features into a new set of uncorrelated features called principal components, which capture the maximum variance in the data. The number of principal components is determined by a predefined parameter, `n_components`, which specifies how many dimensions to retain while preserving as much information as possible.
 
 ## How PCA Works
 
@@ -33,6 +20,17 @@ PCA transforms high-dimensional data into a lower-dimensional form while preserv
    - Eigenvalues represent the variance explained by each principal component.
    - Eigenvectors define the direction of the principal components.
 4. **Projection**: Project the data onto the selected principal components.
+
+## Advantages of PCA
+- **Reduces Dimentionality:** Helps in handaling the curse of dimentionality by transforming data into fewer features while retaining maximum variance.
+- **Remove Redundancy:** PCA removes correlated features, making teh dataset more compact and efficient.
+- **Improves Model Performance:** By reducing noise and redundant features, PCA can speed up machie learning models and prevent overfiting.
+- **Visualiszation:** PCA helps in reducing data to 2D or 3D for better visualization in high-dimentional datasets.
+- **Unsupervised Learning:** PCA doesn't need labeled data, making it useful for explonatory data analysis.
+
+## Disadvantages of PCA
+- **Loss of Interpretability:** The transformed features(principal components) are linear combinations of original eatures, making them difficult to interpret.
+- 
 
 ## Applications of PCA
 
