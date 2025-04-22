@@ -9,15 +9,16 @@ Before diving into the evaluation of model performance, it is important for us t
 
 A commonly asked question is about model accuracy vs model performance, but this is a false dichotomy. Model accuracy is one way to measure model performance. Accuracy relates to the percentage of model predictions that are accurate, which is one way to define performance in machine learning. But it will not always be the most important metric of performance, depending on what the model is designed to do. 
 
-# What is performance evaluation in machine learning?
-
-
-
-
-
-Performance evaluation is the quantitative measure of how well a trained model performs on specific model evaluation metrics in machine learning. This information can then be used to determine if a model is ready to move onto the next stage of testing, be deployed more broadly, or is in need of more training or retraining.
+# What are the model evaluation methods?
+There are two types of Models Classification and Regression, Each type of model have its oven evaluation metric that provides the quantitve measure of the performance of the model.
 
 ---
+## Classification Metrics
+
+
+
+
+Classification metrics are generally used for discrete values a model might produce when it has finished classifying all the given data. In order to clearly display the raw data needed to calculate desired classification metrics, a confusion matrix for a model can be created. 
 
 ## 1. **Confusion Matrix**
 ![](https://github.com/user-attachments/assets/73bdfccd-2a0a-46f1-a3e9-c3c99706d90d)
