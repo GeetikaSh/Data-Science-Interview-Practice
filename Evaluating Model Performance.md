@@ -1,14 +1,17 @@
-# Table of Contents
+# Evaluating Model Performance
 
-1. [Confusion Matrix](#1-confusion-matrix)
-2. [ROC-AUC Curve (Receiver Operating Characteristic - Area Under Curve)](#2-roc-auc-curve-receiver-operating-characteristic---area-under-curve)
-3. [Precision-Recall (PR) Curve](#3-precision-recall-pr-curve)
-4. [Balanced Accuracy](#4-balanced-accuracy)
-5. [Class-Specific Metrics](#5-class-specific-metrics)
-6. [Resampling Techniques for Better Evaluation](#6-resampling-techniques-for-better-evaluation)
-7. [Cost-Sensitive Learning](#7-cost-sensitive-learning)
-8. [Threshold in Classification Models](#threshold-in-classification-models)
-9. [References](#refrence)
+In machine learning, model performance evaluation used model monitoring to assess how well a model is performing at the specific task it was designed for. There avarity of waus to assess the model performance, which are discussed in detail latter in the post.
+
+You might be thinking, thy evaluataing a model is that necessary. Well it is not any important in developemnt and testing stage, but one need to keep in eye on the model performance once it is deployed. Cotinued evaluation can identify trends like data drify and model bias, allowing models to be retained for improved performance.
+
+#
+
+What is performance in machine learning?
+Model performance in general refers to how well a model accomplishes its intended task, but it is important to define exactly what element of a model is being considered, and what “doing well” means for that element. 
+
+For instance, in a model designed to look for credit card fraud, identifying as many fraudulent transactions as possible will likely be the goal. The number of false positives (where non-fraudulent activity was misidentified as fraud) will be less important than the number of false negatives (where fraudulent activity is not identified). In this case, the recall of the model is likely to be the most important performance indicator. The MLOps team would then define the recall results they consider acceptable in order to determine if this model is performing well or not.
+
+A commonly asked question is about model accuracy vs model performance, but this is a false dichotomy. Model accuracy is one way to measure model performance. Accuracy relates to the percentage of model predictions that are accurate, which is one way to define performance in machine learning. But it will not always be the most important metric of performance, depending on what the model is designed to do. 
 
 # Evaluating Model Performance on an Imbalanced Dataset
 
