@@ -16,7 +16,7 @@ There are two types of Models Classification and Regression, Each type of model 
 ## Classification Metrics
 
 Ckassification metrics are generally used for discrete values of a model might produce when done classifying all the given data. In order to understand how well the model has classified it's target value, we observe the **confision matrix**.
-**Why use these metrics?** In imbalanced datasets, focusing on Precision and Recall provides better insight than overall accuracy.
+> **Why use these metrics?** In imbalanced datasets, focusing on Precision and Recall provides better insight than overall accuracy.
 
 ### **Confusion Matrix**
 ![](https://github.com/user-attachments/assets/73bdfccd-2a0a-46f1-a3e9-c3c99706d90d)
