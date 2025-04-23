@@ -15,13 +15,25 @@ There are two types of Models Classification and Regression, Each type of model 
 ---
 ## Classification Metrics
 
-
-
-
-Classification metrics are generally used for discrete values a model might produce when it has finished classifying all the given data. In order to clearly display the raw data needed to calculate desired classification metrics, a confusion matrix for a model can be created. 
+Ckassification metrics are generally used for discrete values of a model might produce when done classifying all the given data. In order to understand how well the model has classified it's target value, we observe the **confision matrix**.
 
 ## 1. **Confusion Matrix**
 ![](https://github.com/user-attachments/assets/73bdfccd-2a0a-46f1-a3e9-c3c99706d90d)
+
+
+
+
+_This matrix makes clear not only how often the model predictions were correct, but also in which ways it was correct or incorrect. These variables are listed in formulas as TN (true negative), FP (false positive), etc.
+
+These are some of the most commonly useful classification metrics that can be calculated from the data contained in a confusion matrix.
+
+Accuracy - percentage of the total variables that were correctly classified. Use the formula Accuracy = (TP+TN) / (TP+TN+FP+FN)
+False positive rate - how often the model predicts a positive for a value that is actually negative. Use the formula False Positive Rate = FP / (FP+TN)
+Precision - percentage of positive cases that were true positives as opposed to false positives. Use the formula Precision = TP / (TP+FP)
+Recall - percentage of actual positive cases that were predicted as positives, as opposed to those classified as false negatives. Use the formula Recall = TP/(TP+FN)
+Logarithmic loss - measure of how many total errors a model has. The closer to zero, the more correct predictions a model makes in classifications.
+Area under curve - method of visualizing true and false positive rates against each other. _
+
 
 A confusion matrix breaks down the classification results:
 - **True Positives (TP)**: Correctly predicted positive cases.
