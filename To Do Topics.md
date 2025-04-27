@@ -11,3 +11,4 @@
 - Fuzzy Matching: Use Levenshtein Distance or Jaccard Similarity for near-duplicates (e.g., typos).
 - Random Search
 - Grdient Descent
+- LangChain
