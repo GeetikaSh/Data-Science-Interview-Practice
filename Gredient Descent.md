@@ -17,6 +17,12 @@ where: $\( \theta \)$ are the parameters, $\( \alpha \)$ is the learning rate, $
 - **Batch Gradient Descent:** Uses the entire dataset to compute gradients at every step.
 - **Stochastic Gradient Descent (SGD):** Updates parameters for each training sample individually.
 - **Mini-batch Gradient Descent:** Uses a small random subset of the data to compute updates, balancing between batch and stochastic gradient descents.
+
+## What is the role of the learning rate in Gradient Descent?
+The learning rate tells us how bis a step we takes towards the minimum. If it’s too small, convergence is slow; if it’s too large, the algorithm might overshoot the minimum or even diverge.
+
+
+
 ---
 
 # Reference
