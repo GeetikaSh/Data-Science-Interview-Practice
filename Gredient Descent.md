@@ -56,6 +56,25 @@ $$
 
 where: $\( \beta \)$ is the momentum term, $\( \alpha \)$ is the learning rate, $\( v \)$ is the velocity (accumulated gradient), $\( \nabla_{\theta} J(\theta) \)$ is the gradient of the loss function with respect to \( \theta \).
 
+## What are some common optimization algorithms derived from Gradient Descent?
+- Momentum (discussed above)
+- Nesterov Accelerated Gradient (NAG)
+- Adagrad
+- RMSProp
+- Adam (combines momentum + adaptive learning rates)
+
+## Can Gradient Descent get stuck?
+Yes. Gradient Descent can get stuck in:
+- Local minima (less common in high dimensions)
+- Saddle points (points where the gradient is zero but it's neither a minima nor maxima)
+- Plateaus (areas where gradient is very small)
+
+Strategies like random restarts, using advanced optimizers (e.g., Adam), or adding noise to gradients can help.
+
+## What is the difference between Gradient Descent and Stochastic Gradient Descent?
+- **Gradient Descent** computes gradients using the whole dataset, leading to stable but slow updates.
+- **Stochastic Gradient Descent (SGD)** computes gradients using a single sample at a time, making updates noisier but often faster and better at escaping local minima.
+
 ## Advantages of Gradient Descent
 - **Widely used**: Gradient descent and its variants are widely used in machine learning and optimization problems because they are **effective and easy to implement**.
 - **Convergence:** Gradient descent and its variants can converge to a global minimum or a good local minimum of the cost function, depending on the problem and the variant used.
@@ -63,6 +82,10 @@ where: $\( \beta \)$ is the momentum term, $\( \alpha \)$ is the learning rate, 
 - **Flexibility:** Different variants of gradient descent offer a range of trade-offs between accuracy and speed, and can be adjusted to optimize the performance of a specific problem.
 
 ## Disadvantages of Gradient Descent
+- **Choice of learning rate:** The choice of learning rate is crucial for the convergence of gradient descent and its variants. Choosing a learning rate that is too large can lead to oscillations or overshooting while choosing a learning rate that is too small can lead to slow convergence or getting stuck in local minima.
+- **Sensitivity to initialization:** Gradient descent and its variants can be sensitive to the initialization of the model’s parameters, which can affect the convergence and the quality of the solution.
+- **Time-consuming:** Gradient descent and its variants can be time-consuming, especially when dealing with large datasets and high-dimensional models. The convergence speed can also vary depending on the variant used and the specific problem.
+- **Local optima:** Gradient descent and its variants can converge to a local minimum instead of the global minimum of the cost function, especially in non-convex problems. This can affect the quality of the solution, and techniques like random initialization and multiple restarts may be used to mitigate this issue.
 
 ---
 
