@@ -1,7 +1,7 @@
 # K- Means Clustering
 
 ## What is K-means Clustering?
-**K-means** is an **unsupervised machine learning algorithm** used to partition data into `k` distinct clusters based on feature similarity. It assigns **data points to the nearest centroid**, then recalculates centroids iteratively until convergence. The algorithm aims to minimize the within-cluster variance (sum of squared distances between points and their centroids). For example online store uses K-Means to group customers based on purchase frequency and spending creating segments like Budget Shoppers, Frequent Buyers and Big Spenders for personalised marketing.
+**K-means** is an **unsupervised machine learning algorithm** used to partition data into `k` distinct clusters based on feature similarity. It assigns **data points to the nearest centroid**, then recalculates centroids iteratively until convergence. The algorithm aims to minimize the within-cluster variance (sum of squared distances between points and their centroids). For example, online store uses K-Means to group customers based on purchase frequency and spending creating segments like Budget Shoppers, Frequent Buyers and Big Spenders for personalised marketing.
 
 ## How does the K-means algorithm work?
 The K-means algorithm follows these steps:
@@ -27,12 +27,17 @@ labels = kmeans.labels_
 ```
 
 ## How do you choose the number of clusters (k) in K-means?
-- **[Elbow Method](https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/)**: It is a graphical tool used to determine the optimal number of clusters (k) in K-means. Selecting the right number of clusters is crucial for meaningful segmentation. The Elbow Method plotts the sum of squared distances (inertia) for different values of k. As k increases, inertia decreases. The "elbow" of the curve indicates the optimal value of k, where further increases in k result in only marginal improvements in inertia.
+- **[Elbow Method](https://www.geeksforgeeks.org/elbow-method-for-optimal-value-of-k-in-kmeans/)**: It is a graphical tool used to determine the optimal number of clusters (k) in K-means. Selecting the right number of clusters is crucial for meaningful segmentation. The Elbow Method plots the sum of squared distances (inertia) for different values of k. As k increases, inertia decreases. The "elbow" of the curve indicates the optimal value of k, where further increases in k result in only marginal improvements in inertia.
   ![Elbow Method](https://media.geeksforgeeks.org/wp-content/uploads/20241028173908396970/Elbow-Method.png)
 - **[Silhouette Score](https://www.geeksforgeeks.org/silhouette-algorithm-to-determine-the-optimal-value-of-k/?ref=asr4)**: Measures how similar a data point is to its own cluster compared to other clusters.
   A higher score indicates better clustering.
 
-## 4. What are the advantages and disadvantages of K-means clustering?
+## What are the assumptions made by K-Means Clustering?
+- Clusters are spherical (points in a cluster are closer to the center).
+- Clusters have similar density and size.
+- Variables are continuous (it struggles with categorical data unless modified).
+
+## What are the advantages and disadvantages of K-means clustering?
 
 **Advantages:**
 - **Simplicity**: K-means is easy to implement and computationally efficient.
@@ -40,7 +45,7 @@ labels = kmeans.labels_
 - **Efficiency:** It often performs well when the clusters are compact and spherical.
 
 **Disadvantages:**
-- **Sensitive to Initialization**: Poor initial centroids can lead to suboptimal results. To overcome this **K-means++** method is used
+- **Sensitive to Initialization**: Poor initial centroids can lead to sub-optimal results. To overcome this **K-means++** method is used
 - **Choosing k**: The number of clusters must be predefined, which is not always straightforward.
 - **Assumes Spherical Clusters**: It works best when clusters are spherical and of similar size.
 - **Sensitive to Outliers:** Outliers can significantly affect centroid placement and result in inaccurate clustering.
