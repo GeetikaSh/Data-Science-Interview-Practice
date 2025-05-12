@@ -7,32 +7,32 @@ SQL commands are categorized into five types based on their functionality:
 ## 1. Data Definition Language (DDL)
 DDL commands are used to define and manage the database structure or schema.
 
-| Command       | Description                                 |
-|---------------|---------------------------------------------|
-| `CREATE`      | Creates a new database, table, or index.    |
-| `ALTER`       | Modifies an existing database or table.     |
-| `DROP`        | Deletes a database, table, or index.        |
-| `TRUNCATE`    | Removes all records from a table but keeps the structure. |
+| Command       | Description                                 |Syntax|
+|---------------|---------------------------------------------|-------|
+| `CREATE`      | Creates a new database, table, or index.    |CREATE TABLE table_name (column1 data_type, column2 data_type, ...);|
+| `ALTER`       | Modifies an existing database or table.     |ALTER TABLE table_name ADD COLUMN column_name data_type;|
+| `DROP`        | Deletes a database, table, or index.        |DROP TABLE table_name|
+| `TRUNCATE`    | Removes all records from a table but keeps the structure. |TRUNCATE TABLE table_name;|
 
 ---
 
 ## 2. Data Manipulation Language (DML)
 DML commands are used to manipulate data within the database.
 
-| Command       | Description                                 |
-|---------------|---------------------------------------------|
-| `INSERT`      | Adds new records into a table.              |
-| `UPDATE`      | Modifies existing records in a table.       |
-| `DELETE`      | Removes specific records from a table.      |
+| Command       | Description                                 |Syntax|
+|---------------|---------------------------------------------|------|
+| `INSERT`      | Adds new records into a table.              |INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);|
+| `UPDATE`      | Modifies existing records in a table.       |UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+| `DELETE`      | Removes specific records from a table.      |DELETE FROM table_name WHERE condition;|
 
 ---
 
 ## 3. Data Query Language (DQL)
 DQL commands are used to query or retrieve data from the database.
 
-| Command       | Description                                 |
-|---------------|---------------------------------------------|
-| `SELECT`      | Retrieves data from one or more tables.     |
+| Command       | Description                                 |Syntax|
+|---------------|---------------------------------------------|-------|
+| `SELECT`      | Retrieves data from one or more tables.     |SELECT column1, column2, ...FROM table_name WHERE condition;|
 
 ---
 
@@ -70,3 +70,8 @@ TCL commands are used to manage transactions in the database.
 ---
 
 By understanding these SQL command types, you can effectively manage databases, perform data operations, and control user access.
+
+---
+
+# Reference
+- [https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/](GeeksforGeeks)
