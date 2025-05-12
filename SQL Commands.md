@@ -74,4 +74,4 @@ By understanding these SQL command types, you can effectively manage databases, 
 ---
 
 # Reference
-- [https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/](GeeksforGeeks)
+- (https://www.geeksforgeeks.org/sql-ddl-dql-dml-dcl-tcl-commands/)[GeeksforGeeks]
