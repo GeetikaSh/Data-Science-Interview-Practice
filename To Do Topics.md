@@ -12,3 +12,4 @@
 - Random Search
 - Grdient Descent
 - LangChain
+- [SQL Interview Questions](https://www.geeksforgeeks.org/sql-interview-questions/)
