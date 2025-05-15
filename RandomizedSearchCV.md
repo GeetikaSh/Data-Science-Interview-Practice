@@ -1,4 +1,4 @@
-# RandomizedSearchCV: A Comprehensive Guide
+# RandomizedSearchCV
 
 ## Overview
 
