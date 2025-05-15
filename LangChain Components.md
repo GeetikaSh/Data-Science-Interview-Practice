@@ -39,6 +39,10 @@ Crafting effective prompts is essential for controlling the behavior, tone, and 
 
 LangChain helps in managing and structuring prompts through reusable templates, variables, and prompt engineering techniques.
 
+LangChain often uses Jinja2 templates for prompt templates. Jinja2 lets you create dynamic prompts with variables and control flow inside the text, making your prompts flexible and reusable.
+
+.jsonl files are used for datasets or fine-tuning data but not typically for prompt templates.
+
 ### Types of Prompting
 1. **Few-Shot Prompting**
 In this technique, the prompt includes a few examples (input-output pairs) to help the model understand the pattern or format expected in its response.
