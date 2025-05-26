@@ -1,4 +1,3 @@
-
 # 📦 Containerizing a Flask API for ML Model Deployment with Docker
 
 This guide outlines the key steps to containerize a Flask API serving a machine learning model, enabling smooth integration into an MLOps pipeline.
