@@ -30,7 +30,6 @@ Contributions are welcome! Feel free to add your questions, answers, or resource
 ### [Upcoming Topics](https://github.com/GeetikaSh/Data-Science-Interview-Practice/blob/main/To%20Do%20Topics.md)
 
 ### Interview Questions At BharatPe
-- 5 Assumptions of Linear Regression
 - How XGBoost Handles Null entries and Categorical Data
 - Which Moldels Uses Eigen Value and Eigen Vectors
 - PCA is Supervised or Unsupervised Model
