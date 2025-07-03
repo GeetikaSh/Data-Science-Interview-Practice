@@ -24,9 +24,7 @@ In tokenization, each **word** in the sentence is assigned a unique **token ID**
 
 Now, comparing the two sentences becomes easier — **token 0, 1, and 2 are shared**, showing high similarity, and minimizing confusion.
 
----
-
-## 🧪 Code Example: Using Keras Tokenizer
+### 🧪 Code Example: Using Keras Tokenizer
 
 ```python
 import tensorflow as tf
@@ -60,6 +58,104 @@ output:
 ### 🧠 Insight:
 - The tokenizer automatically lowercases text and removes punctuation like commas and exclamation marks.
 - "I, love my cat" and "You love my dog!" are cleaned and tokenized as if they had no punctuation.
+
+---
+## 🔁 Sequencing – Turning Sentences into Machine-Usable Data
+
+Once tokenization is complete, the next step is to **convert these tokenized words into uniform-length sequences** — this is called **sequencing**.
+
+### ❓ Why Use Sequencing?
+
+Machine learning models require inputs to be of **uniform shape**. However, sentences can vary in length. Sequencing helps by:
+
+- Converting text into integer sequences (tokenized)
+- Padding shorter sequences with zeros so all sequences have the **same length**
+
+
+### 🚫 What Happens If a Word Is Not in the Vocabulary?
+
+If a word is **not present in the training corpus**, it's marked using an **OOV (Out-Of-Vocabulary) token**.
+
+```python
+tokenizer = Tokenizer(num_words=100, oov_token="<OOV>")
+```
+
+This ensures:
+- No failure in processing unknown words
+- Loss of information is minimized
+- It helps the model generalize better on unseen data
+
+### 🧩 What is Padding?
+Not all sequences have the same length. pad_sequences() helps ensure equal-length input by adding padding tokens (usually 0) either at the start (pre-padding) or end (post-padding).
+
+```python
+pad_sequences(sequences, maxlen=5, padding='pre')
+```
+Default padding is `pre`. You can also use `post`.
+
+### 🧪 Code Example: Sequencing and Padding with TensorFlow 
+
+```python
+import tensorflow as tf
+from tensorflow import keras
+
+
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+sentences = [
+    'I love my dog',
+    'I love my cat',
+    'You love my dog!',
+    'Do you think my dog is amazing?'
+]
+
+tokenizer = Tokenizer(num_words = 100, oov_token="<OOV>")
+tokenizer.fit_on_texts(sentences)
+word_index = tokenizer.word_index
+
+sequences = tokenizer.texts_to_sequences(sentences)
+
+padded = pad_sequences(sequences, maxlen=5)
+print("\nWord Index = " , word_index)
+print("\nSequences = " , sequences)
+print("\nPadded Sequences:")
+print(padded)
+
+
+# Try with words that the tokenizer wasn't fit to
+test_data = [
+    'i really love my dog',
+    'my dog loves my manatee'
+]
+
+test_seq = tokenizer.texts_to_sequences(test_data)
+print("\nTest Sequence = ", test_seq)
+
+padded = pad_sequences(test_seq, maxlen=10)
+print("\nPadded Test Sequence: ")
+print(padded)
+```
+
+#### 📦 Output (Padded Sequences Example)
+
+```text
+Word Index =  {'<OOV>': 1, 'my': 2, 'love': 3, 'dog': 4, 'i': 5, 'you': 6, 'cat': 7, 'do': 8, 'think': 9, 'is': 10, 'amazing': 11}
+
+Sequences =  [[5, 3, 2, 4], [5, 3, 2, 7], [6, 3, 2, 4], [8, 6, 9, 2, 4, 10, 11]]
+
+Padded Sequences:
+[[ 0  5  3  2  4]
+ [ 0  5  3  2  7]
+ [ 0  6  3  2  4]
+ [ 9  2  4 10 11]]
+
+Test Sequence =  [[5, 1, 3, 2, 4], [2, 4, 1, 2, 1]]
+
+Padded Test Sequence: 
+[[0 0 0 0 0 5 1 3 2 4]
+ [0 0 0 0 0 2 4 1 2 1]]
+```
 
 ---
 
@@ -105,17 +201,11 @@ Example:
 3. **Transformers (Hugging Face)**: For subword tokenization with pre-trained models.  
 4. **OpenNLP**: Java-based library for tokenization and other NLP tasks.  
 
-### **How does Tokenization differ for programming languages (Code Tokenization)?**  
-**Answer:**  
-Code tokenization involves splitting source code into tokens like keywords, variables, operators, and literals, considering syntax and semantics of the programming language. Tools like **Tree-Sitter** or **ANTLR** are used for this purpose.  
-
 ### **What is Sentence Tokenization? How does it differ from Word Tokenization?**  
 **Answer:**  
 - **Sentence Tokenization**: Splits text into sentences. Example: "Hello world. NLP is amazing." → ["Hello world.", "NLP is amazing."]  
 - **Word Tokenization**: Splits sentences or text into words.  
 Sentence tokenization is often a precursor to word tokenization.  
-
----
 
 ### 10. **What are some challenges in Tokenizing URLs or email addresses?**  
 **Answer:**  
