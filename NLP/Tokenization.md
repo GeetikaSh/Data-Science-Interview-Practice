@@ -247,3 +247,4 @@ Basic tokenization methods like character tokenization are language-agnostic. Ho
 
 - Be ready to explain the difference between tokenization and embedding.
 - Also know subword tokenization methods like Byte-Pair Encoding (BPE) and WordPiece.
+- Language Agnostic
