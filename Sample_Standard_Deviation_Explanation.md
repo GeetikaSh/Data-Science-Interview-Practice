@@ -1,4 +1,4 @@
-# Why Divide by \( n - 1 \) in Sample Standard Deviation?
+# Why Sample Standard Deviation is Divided by \( n - 1 \) ?
 
 **Sample standard deviation** is a measure of how much the values in a sample dataset deviate from the sample mean. It is used instead of **population standard deviation** because collecting data from an entire population is often impractical or impossible due to its large size.
 
