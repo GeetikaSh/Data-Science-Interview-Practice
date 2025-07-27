@@ -1,5 +1,8 @@
 # Gradient Boosting
 
+
+#### VVV Imp Wtch Video [CampusX](https://www.youtube.com/watch?v=fbKz7N92mhQ)
+
 ![Gradient Boosting](https://media.geeksforgeeks.org/wp-content/uploads/20200721214745/gradientboosting.PNG)
 
 Gradient Boosting is a powerful machine learning algorithm used for both regression and classification tasks. It builds an ensemble of weak learners (typically decision trees) in a sequential manner, optimizing the overall performance by minimizing a loss function.
