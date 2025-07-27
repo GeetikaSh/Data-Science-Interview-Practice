@@ -106,6 +106,14 @@ Deploying a RAG system at scale comes with multiple challenges, including:
    - If sensitive data is retrieved and exposed, it can create privacy concerns.
    - **Solution:** Implement access controls and data anonymization techniques.
 
+## How would you implement or fine-tune a RAG system?
+- Use LangChain or Haystack for orchestration.
+- Use OpenAI embeddings / Azure OpenAI / Cohere / SentenceTransformers for document embedding.
+- Store in FAISS, Pinecone, or Azure Cognitive Search.
+- Tune chunk size, retrieval strategy (e.g., semantic search + metadata filters).
+- Add Reranking models (e.g., Cohere re-ranker) for better document selection.
+- Use tools like LangSmith or TruLens for feedback + eval.
+
 ## Real-World Use Cases
 - Enterprise Chatbots with live access to documentation
 - Customer Support Assistants
