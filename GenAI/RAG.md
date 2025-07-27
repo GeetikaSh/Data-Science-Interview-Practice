@@ -112,4 +112,8 @@ Deploying a RAG system at scale comes with multiple challenges, including:
    - If sensitive data is retrieved and exposed, it can create privacy concerns.
    - **Solution:** Implement access controls and data anonymization techniques.
 
-## 
+## Real-World Use Cases
+- Enterprise Chatbots with live access to documentation
+- Customer Support Assistants
+- Compliance and Legal Document Search
+- Codebase Q&A from internal dev docs or GitHub
