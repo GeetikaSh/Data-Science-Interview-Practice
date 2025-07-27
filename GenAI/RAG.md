@@ -10,6 +10,27 @@ Retrieval-Augmented Generation (RAG) is an advanced AI framework that enhances t
 
 ---
 
+## RAG Architecture -> How it Works
+
+**1. Retrical (Search Component)**
+- Retrives relevant documents or chunks from a **knowledge base** (e.g., vectorDB like FAISS, Weaviate, Azure Cognitive Search, etc.)
+- Uses embedding (e.g. from BERT) + similarity search.
+
+**2. Generator (Language model)**
+- Takes the retrived documents + user query as the input.
+- Genrates a final response using models like **GPT, T5, or LLaMA**.
+
+``` scss
+RETRIVAL -> AUGUMENTATION -> GENERATION
+
+User Query
+   ↓
+[Retriever] → Top-k Documents (Contextual Knowledge)
+   ↓
+[Generator (LLM)] → Answer
+```
+
+---
 ## Technical Implementation of RAG: How Vector Databases Work
 RAG (Retrieval-Augmented Generation) combines retrieval (searching for relevant documents) and generation (producing human-like text responses) to enhance LLMs. The key component enabling this is the vector database, which efficiently stores and retrieves relevant contextual information.
 
