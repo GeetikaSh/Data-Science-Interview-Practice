@@ -1,6 +1,6 @@
 # Regularization
 
-Regularization techniques help prevent **overfitting** in machine learning models by adding a penalty to the loss function. These penalties are based on the magnitude of the model's coefficients. The most common regularization methods are:
+Regularization techniques help prevent **overfitting** in machine learning models **by adding a penalty to the loss function**. These penalties are based on the magnitude of the model's coefficients. In simple words, it adds a penalty term to the loss function to discourage the model from learning noise or irrelevant patterns in the training data. The most common regularization methods are:
 
 - **L1 Regularization (Lasso Regression)**
 - **L2 Regularization (Ridge Regression)**
@@ -22,7 +22,7 @@ $$
   where:
 
   - \( w \) represents the model coefficients.
-  - \( \lambda \) is the regularization strength.
+  - $\lambda$ is the regularization strength.
 
 - **Key Characteristics**:
   - Encourages **sparsity** by setting some coefficients to exactly **zero**.
@@ -50,6 +50,7 @@ $$
   - Shrinks coefficients **towards zero** but does **not** eliminate them.
   - Helps **distribute importance** across all features.
   - Ideal for datasets where **all features contribute to the prediction**.
+  - L2 is also differentiable everywhere, making it computationally more stable for optimization.
 
 - **When to Use**:  
   Use **L2 regularization** when you want to reduce overfitting without completely removing any features. It works well in **high-dimensional datasets** or when **multicollinearity** is present.
@@ -66,6 +67,11 @@ $$
 ## Elastic Net: Combining L1 and L2
 
 - **Definition**: Elastic Net combines **L1 and L2 regularization**, allowing a balance between feature selection and model stability.
+- ElasticNet combines L1 and L2 penalties. It's useful when:
+  - You suspect some irrelevant features (→ L1).
+  - But also need stability across correlated features (→ L2).
+It provides a flexible regularization strategy with both sparsity and smoothness.
+
 - **Formula**:
 
 $$
@@ -96,6 +102,21 @@ Regularization plays a critical role in managing **bias and variance**:
 ### **Key Trade-offs**
 ✅ **L1 Regularization**: Higher bias, lower variance, effective feature selection.  
 ✅ **L2 Regularization**: Moderate bias increase, smoother models, better generalization.
+
+---
+
+## How do you tune the regularization parameter λ (lambda)?
+- Use cross-validation (e.g., `GridSearchCV`, `RandomizedSearchCV`, or `Bayesian Optimization`) to select the best λ.
+
+In practice:
+- High λ → more regularization → simpler model, higher bias.
+- Low λ → less regularization → risk of overfitting, higher variance.
+
+## Is regularization only used in linear models?
+**No. Regularization is widely used across ML:**
+- Logistic regression: To penalize overconfident predictions.
+- Neural networks: L2 weight decay, Dropout, Early stopping, BatchNorm.
+- Tree-based models (e.g., XGBoost, LightGBM): Use regularization via max depth, min samples split, learning rate, and L1/L2 penalties on leaf weights.
 
 ---
 
