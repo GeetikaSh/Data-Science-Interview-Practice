@@ -1,7 +1,14 @@
 # Cross-Validation: A Comprehensive Guide
 
-Cross-validation is a statistical method used to evaluate the performance of machine learning models. It ensures that a model generalizes well to unseen data by testing it on different subsets of the data.
-This process helps prevent overfitting and provides a more robust assessment of the model’s performance.
+Cross-validation is a statistical method used to evaluate the performance of machine learning models. It ensures that a model generalizes well to unseen data by testing it on different subsets of the data. This process helps prevent overfitting and provides a more robust assessment of the model’s performance.
+
+In simple words it is a resampling procedure used to evaluate machine learning models and access how the model will perform for an independent test dataset. Below are the types of cross validation.
+- Leave one out cross-validation
+- Holdout cross-validation
+- Repeated random subsampling validation
+- k-fold cross-validation
+- Stratified k-fold cross-validation
+- Time Series cross-validation
 
 
 ## Why Use Cross-Validation?
@@ -13,13 +20,48 @@ This process helps prevent overfitting and provides a more robust assessment of 
 
 ## Types of Cross-Validation
 
-### 1. **K-Fold Cross-Validation**
+### **Leave-One-Out Cross-Validation (LOOCV)**
+![LOOCV](https://miro.medium.com/v2/resize:fit:720/format:webp/1*T-RXyt_53zxvh8pom3UhOA.png)
+   
+In **Leave-One-Out Cross-Validation (LOOCV)**, the dataset is split so that each iteration trains on N-1 data points and tests on the remaining one. This process repeats N times, where N is the number of data points. The main advantage of LOOCV is that it uses nearly all the data for training, leading to an unbiased estimate of model performance. However, it has drawbacks:
+
+- **Computationally expensive** for large datasets, as it requires training N models.
+- High variance, meaning small changes in the data can lead to significantly different results.
+- More prone to overfitting, as each training set is very similar, making the model sensitive to small variations.
+  
+Despite these drawbacks, LOOCV is useful when working with small datasets where preserving as much training data as possible is crucial.
+    
+```python
+from sklearn import datasets
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import LeaveOneOut, cross_val_score
+
+X, y = datasets.load_iris(return_X_y=True)
+
+clf = DecisionTreeClassifier(random_state=42)
+
+loo = LeaveOneOut()
+
+scores = cross_val_score(clf, X, y, cv = loo)
+
+print("Cross Validation Scores: ", scores)
+print("Average CV Score: ", scores.mean())
+print("Number of CV Scores used in Average: ", len(scores))
+```
+
+### **Hold Out Cross-Validataion**
+Split the Training dataset into training + Validation Dataset; Size of Training Dataset should be Greater than Validation Data Set. When we do this split we take in the random state.
+
+- But this validation does not works well with the imbalanced dataset of lack of uniform split, one label can be dominant in trianing and the another one can be dominant on validation.
+
+### **K-Fold Cross-Validation**
 ![5-Fold Cross Validation](https://github.com/user-attachments/assets/f58e4041-86fa-4ac9-9090-5519a3b088cd)
    
    - The data is split into *k* equally sized folds.
    - The model is trained on *k-1* folds and validated on the remaining fold.
    - This process repeats *k* times, with each fold serving as the validation set once.
    - The final performance is the average of all *k* evaluations.
+   - But it don't work's well with the imbalanced dataset.
      
 ```python
 from sklearn import datasets
@@ -63,35 +105,6 @@ print("Average CV Score: ", scores.mean())
 print("Number of CV Scores used in Average: ", len(scores))
 ```
 
-### 3. **Leave-One-Out Cross-Validation (LOOCV)**
-![LOOCV](https://miro.medium.com/v2/resize:fit:720/format:webp/1*T-RXyt_53zxvh8pom3UhOA.png)
-   
-In **Leave-One-Out Cross-Validation (LOOCV)**, the dataset is split so that each iteration trains on N-1 data points and tests on the remaining one. This process repeats N times, where N is the number of data points. The main advantage of LOOCV is that it uses nearly all the data for training, leading to an unbiased estimate of model performance. However, it has drawbacks:
-
-- Computationally expensive for large datasets, as it requires training N models.
-- High variance, meaning small changes in the data can lead to significantly different results.
-- More prone to overfitting, as each training set is very similar, making the model sensitive to small variations.
-  
-Despite these drawbacks, LOOCV is useful when working with small datasets where preserving as much training data as possible is crucial.
-    
-```python
-from sklearn import datasets
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import LeaveOneOut, cross_val_score
-
-X, y = datasets.load_iris(return_X_y=True)
-
-clf = DecisionTreeClassifier(random_state=42)
-
-loo = LeaveOneOut()
-
-scores = cross_val_score(clf, X, y, cv = loo)
-
-print("Cross Validation Scores: ", scores)
-print("Average CV Score: ", scores.mean())
-print("Number of CV Scores used in Average: ", len(scores))
-```
-
 ### 4. **Time Series Cross-Validation**
 - Used for time-dependent data.
 - Ensures that training always occurs on past data and testing on future data to preserve temporal order.
@@ -125,8 +138,6 @@ print("Number of CV Scores used in Average: ", len(scores))
   - **Example:**  
     - Split 1: Train = [1, 2, 3], Test = [4, 5]  
     - Split 2: Train = [4, 5, 6], Test = [7, 8]  
-
-`Temporal data, also known as time-series data, is a collection of data points that are indexed in order of time.`
 
 ### Monte Carlo Cross Validation
 
@@ -183,14 +194,13 @@ In time series cross-validation, data is split in a way that respects the time o
 
 Two common approaches are:
 
-- Expanding window: The training set grows over time, always including past observations while testing on the next time step.
-- Rolling window: A fixed-size training set moves forward, keeping the validation period consistent.
+- **Expanding window:** The training set grows over time, always including past observations while testing on the next time step.
+- **Rolling window:** A fixed-size training set moves forward, keeping the validation period consistent.
 
 This method is crucial in forecasting tasks, as it ensures that the model generalizes well to future, unseen data.
 
 ### How would you choose the right number of folds for k-fold cross-validation, and what factors influence this decision?
 The choice of **k** in k-fold cross-validation depends on the dataset size and computational constraints. A common choice is k = 5 or 10, as it provides a good balance between bias, variance, and efficiency. For small datasets, a higher k (e.g., 10) ensures better generalization, while for large datasets, a lower k (e.g., 5) speeds up computation. In extreme cases, **LOOCV (k = N)** can be used, but it is computationally expensive and may lead to high variance in results.
-
 
 ### What are some potential drawbacks of k-fold cross-validation, and how can they be addressed?
 1. Computationally Expensive
