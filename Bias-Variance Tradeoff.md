@@ -2,17 +2,21 @@
 ![Bias Variance Tradeoff](https://media.geeksforgeeks.org/wp-content/uploads/20200107023418/1_oO0KYF7Z84nePqfsJ9E0WQ.png)
 
 It is important to undersatnd prediction errors(bias and variance) when it comes to the accuracy of the machine-learning algorithm.
-There is a tradeoff between a model's ability to minimize bias and variance which is reffered to as the solution for selecting a value of **Regularisation** constant. A proper proper undersatnding of these errors would help to aboid the overfitting and underfitting of a data set training the algorithm.
-And the balance between thses tow souces of error is **Bais-Variance Tradeoff**  the determins teh model performance.
+There is a tradeoff between a model's ability to minimize bias and variance which is reffered to as the solution for selecting a value of **Regularisation** constant. A proper undersatnding of these errors would help to avoid the overfitting and underfitting of a data set training the algorithm.
+And the balance between thses two souces of error is **Bais-Variance Tradeoff**  that determins the model performance.
+
+In simple words it is the fundamental concept in machine learning that describes the tradeoff between two tyes of error that can occur in a predictive model:
+- Bias
+- Variance
 
 ## What is Bias?
 
-The bias is known as the difference between the predicted value and the actual value. If the bias is quite high during the training then it menas there is a lot of error on in the prediction on values of the testing data. That clearly state that teh model is underfitted and have not leaned the patterens in the data properly.
-This happes when the hypothesis or the model is very simplistic in nature. Example: Linear regression applied to a non-linear dataset.
+The bias is known as the **difference between the predicted value and the actual value.** If the bias is quite high during the training then it menas there is a lot of error on in the prediction on values of the testing data. That clearly state that the model is **underfitted** and have not learned the patterens in the data properly. This happes when the hypothesis or the model is very simplistic in nature. 
+Example: Linear regression applied to a non-linear dataset.
 
 ## What is Variance?
-Unlike Bias which is caused by simplistic nature of the model, Variance is cused by excessve completity in the models. In simple owrds, the model learn even the minute datails/ noise in the data. Hence works really well on the training data but when predicts on teh new data the predicytion is far away from the actual value.
-Variance occurs when the model is **Overfitted in the Data**. Example: A deep decision tree that perfectly fits the training data but performs poorly on test data.
+Unlike Bias which is caused by simplistic nature of the model, Variance is caused by excessive completity in the models. In simple words, **the model learn even the minute datails/ noise in the data**. Hence works really well on the training data but when predicts on the new data the prediction is far away from the actual value. Variance occurs when the model is **Overfitted in the Data**.
+Example: A deep decision tree that perfectly fits the training data but performs poorly on test data.
 
 _**Understanding this tradeoff helps in selecting the right model complexity and ensuring good generalization to unseen data.**_
 
@@ -21,7 +25,7 @@ _**Understanding this tradeoff helps in selecting the right model complexity and
 - **Low Bias, High Variance**: Overfitting.
 - **High Bias, Low Variance**: Underfitting.
 - **Optimal Model**: Achieves a balance where both bias and variance are minimized to a practical extent.
-In simple words, if an algorithm is too simple(hypothesis is a linear equation) to lean all important pattern of the data, then this is a High Bias and Low Variance situation. And if the algorithm is too complex(i.e. hypothesis is a high order equstion) that it learns the underline pattern and don't perform well on the new data then this is a High Variance and Low Bias situation. Hence we need to maintaine a fine balance between the too i.e the model cannot be too complex or too simple, which is called Biace Variance tradeoff.
+In simple words, if an algorithm is too simple(hypothesis is a linear equation) to learn all important pattern of the data, then this is a High Bias and Low Variance situation. And if the algorithm is too complex(i.e. hypothesis is a high order equation) that it learns the underline pattern and don't perform well on the new data then this is a High Variance and Low Bias situation. Hence we need to maintaine a fine balance between the two i.e the model cannot be too complex or too simple, which is called Biace Variance tradeoff.
 ---
 
 
@@ -48,9 +52,11 @@ $\text{Total Error} = \text{Bias}^2 + \text{Variance} + \text{Irreducible Error}
 ## How to Handle the Tradeoff
 1. **Increase Model Complexity**: If bias is high (underfitting).
 2. **Simplify Model**: If variance is high (overfitting).
-3. **Cross-Validation**: Use techniques like k-fold cross-validation to evaluate the model's generalization.
+3. **Use cross-validation to check for generalization**: Use techniques like k-fold cross-validation to evaluate the model's generalization.
 4. **Regularization**: Apply techniques such as Ridge or Lasso regression to control variance.
 5. **Ensemble Methods**: Use bagging (e.g., Random Forest) to reduce variance or boosting (e.g., XGBoost) to reduce bias.
+6. Pruning in decision trees.
+7. Increasing training data (to reduce variance).
 
 ## Real Life Experieance of Biace Variance Tradeoff
 In fraud detection, a simple rule-based model might have high bias (missing many fraud cases), while a complex deep learning model might have high variance (flagging too many non-fraud cases). A balanced approach, such as random forests or gradient boosting, would help find the tradeoff.
